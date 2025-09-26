@@ -23,6 +23,23 @@ huggingface-cli download --resume-download Qwen/Qwen3-0.6B \
   --local-dir-use-symlinks False
 ```
 
+## 开发调试
+
+下载源码
+```bash
+git clone https://github.com/stevewuwen/nano-vllm.git
+```
+
+环境依赖，包含cuda，cudnn等等：
+```bash
+docker run -it -w /nano-vllm -v $(pwd):. pytorch/pytorch:2.8.0-cuda12.6-cudnn9-devel bash
+```
+
+下载项目依赖
+```
+pip install -e .
+```
+
 ## Quick Start
 
 See `example.py` for usage. The API mirrors vLLM's interface with minor differences in the `LLM.generate` method:
