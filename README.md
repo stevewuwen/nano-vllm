@@ -19,7 +19,7 @@ pip install git+https://github.com/GeeeekExplorer/nano-vllm.git
 If you prefer to download the model weights manually, use the following command:
 ```bash
 huggingface-cli download --resume-download Qwen/Qwen3-0.6B \
-  --local-dir ~/huggingface/Qwen3-0.6B/ \
+  --local-dir huggingface/Qwen3-0.6B/ \
   --local-dir-use-symlinks False
 ```
 
@@ -56,3 +56,10 @@ See `bench.py` for benchmark.
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=GeeeekExplorer/nano-vllm&type=Date)](https://www.star-history.com/#GeeeekExplorer/nano-vllm&Date)
+
+## Develop
+
+create virtual environment with devcontainer and docker. In vscode, type `shift+ctrl+p` open command line, and type:
+```
+dev containers: reopen in container
+```

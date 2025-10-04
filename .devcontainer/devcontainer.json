@@ -1,0 +1,47 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "pytorch2.8 with cuda and cudnn",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "pytorch/pytorch:2.8.0-cuda12.6-cudnn9-devel",
+	"runArgs": [
+		"--gpus=all"
+	],
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "pip3 install --user -r requirements.txt",
+	"postCreateCommand": "pip install .",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"almenon.arepl",
+				"njpwerner.autodocstring",
+				"ms-toolsai.jupyter",
+				"yzhang.markdown-all-in-one",
+				"shd101wyy.markdown-preview-enhanced",
+				"ionutvmi.path-autocomplete",
+				"ms-python.python",
+				"KevinRose.vsc-python-indent",
+				"mechatroner.rainbow-csv",
+				"charliermarsh.ruff",
+				"Gruntfuggly.todo-tree",
+			]
+		}
+	},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "vscode",
+
+	"postAttachCommand": "python startup_info.py"
+
+}
